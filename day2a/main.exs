@@ -6,6 +6,14 @@ defmodule Main do
              |> Enum.map(fn x -> String.split(x, " ") end)
              |> Enum.map(fn [command, value] -> [command, String.to_integer(value)] end)
              |> IO.inspect
+    # values = [
+    #    ["forward", 5],
+    #    ["down", 5],
+    #    ["forward", 8],
+    #    ["up", 3],
+    #    ["down", 8],
+    #    ["forward", 2]
+    #]
 
     values
     |> Enum.reduce([0, 0], fn x, acc -> update_position(acc, x) end)

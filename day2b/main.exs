@@ -6,6 +6,14 @@ defmodule Main do
              |> Enum.map(fn x -> String.split(x, " ") end)
              |> Enum.map(fn [command, value] -> [command, String.to_integer(value)] end)
              |> IO.inspect
+    # values = [
+    #    ["forward", 5],
+    #    ["down", 5],
+    #    ["forward", 8],
+    #    ["up", 3],
+    #    ["down", 8],
+    #    ["forward", 2]
+    #]
 
     [position, depth, aim] = values
                              |> Enum.reduce([0, 0, 0], &reduce_position/2)
@@ -22,7 +30,9 @@ defmodule Main do
   end
 end
 
+IO.puts "*********** Running Exercice ***********"
 Main.run("input.txt")
 |> IO.inspect
+IO.puts "\n*********** Running Exemple ***********"
 Main.run("exemple.txt")
 |> IO.inspect
