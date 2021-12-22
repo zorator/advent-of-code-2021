@@ -26,9 +26,8 @@ defmodule Main do
       Enum.at(positions, round(size / 2))
     else
       # pair
-      medianIndex = trunc(size / 2) - 1
       positions
-      |> Enum.slice(medianIndex, 2)
+      |> Enum.slice(trunc(size / 2), 2)
       |> Enum.sum
       |> Kernel./(2)
       |> Kernel.round
